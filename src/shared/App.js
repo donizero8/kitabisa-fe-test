@@ -76,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
     cardContent: {
         flexGrow: 1,
     },
+    spanTextDay: {
+        marginRight: theme.spacing(2),
+    },
 }));
 
 export default function App(props) {
@@ -135,17 +138,15 @@ export default function App(props) {
                                                     {campaign.titile}
                                                 </Typography>
                                                 <Typography>
-                                                    <p>Terkumpul : </p>
-                                                    <p>{formatter.format(campaign.donation_received)}     {percentage}%</p>
+                                                    <p>Terkumpul : <span style={{ float: "inline-end" }}>Sisa hari:</span></p>
+                                                    <p>{formatter.format(campaign.donation_received)} <span style={{ float: "inline-end" }}>0</span></p>
+                                                    <p>{percentage}%</p>
                                                 </Typography>
                                                 {percentage < 100 ? <BorderLinearProgressGrey variant="determinate" value={percentage} /> : <BorderLinearProgressPink variant="determinate" value={percentage} />}
                                             </CardContent>
                                             <CardActions>
                                                 <Button size="small" color="primary">
                                                     View
-                                                </Button>
-                                                <Button size="small" color="primary">
-                                                    Edit
                                                 </Button>
                                             </CardActions>
                                         </Card>

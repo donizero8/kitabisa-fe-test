@@ -5,4 +5,4 @@
 
 ### Dashboard Page
 App would display list of campaigns as multiple rows
-![Alt text](ss.png "dashboard")
+![Alt text](ss-dashboard.png "dashboard")
