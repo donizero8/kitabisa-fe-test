@@ -139,7 +139,7 @@ export default function App(props) {
                                                 </Typography>
                                                 <Typography>
                                                     <p>Terkumpul : <span style={{ float: "inline-end" }}>Sisa hari:</span></p>
-                                                    <p>{formatter.format(campaign.donation_received)} <span style={{ float: "inline-end" }}>0</span></p>
+                                                    <p>{formatter.format(campaign.donation_received)} <span style={{ float: "inline-end" }}>{campaign.days_remaining}</span></p>
                                                     <p>{percentage}%</p>
                                                 </Typography>
                                                 {percentage < 100 ? <BorderLinearProgressGrey variant="determinate" value={percentage} /> : <BorderLinearProgressPink variant="determinate" value={percentage} />}
