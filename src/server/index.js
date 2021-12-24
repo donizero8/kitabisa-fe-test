@@ -25,7 +25,7 @@ app.get("/", (req, res, next) => {
                 <!DOCTYPE html>
                 <html>
                     <head>
-                    <title>SSR with React Router</title>
+                    <title>KitaBisa FE test</title>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
                     <script src="/bundle.js" defer></script>
                     <script>
