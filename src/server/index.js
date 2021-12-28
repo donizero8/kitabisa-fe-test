@@ -26,6 +26,10 @@ app.get("/", (req, res, next) => {
                 <html>
                     <head>
                     <title>KitaBisa FE test</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <meta name="title" content="Kitabisa.com - Situs Donasi Terbesar dan Terpercaya di Indonesia" />
+                    <meta name="keywords" content="Donasi, Sedekah, Zakat, Infaq, Tolong, Menolong, Kitabisa, Maal, Penghasilan, Donasi Online, Zakat Online, Wakaf" />
+                    <meta name="description" content="Situs donasi dan menggalang dana (fundraising) untuk inisiatif, campaign dan program sosial. Mari bergotong royong membangun Indonesia!" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
                     <script src="/bundle.js" defer></script>
                     <script>

@@ -20,7 +20,7 @@ export default function Campaign(props) {
         <Card className={classes.card}>
             <CardMedia
                 component="img"
-                alt={props.campaign.titile}
+                alt={props.campaign.short_url}
                 className={classes.cardMedia}
                 image={props.campaign.image}
                 title={props.campaign.titile}

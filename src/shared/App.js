@@ -13,7 +13,8 @@ import useStyles from './styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#00abef'
+            main: '#00abef',
+            contrastText: '#fff'
         }
     }
 });
@@ -38,7 +39,7 @@ export default function App(props) {
                             <div className={classes.heroButtons}>
                                 <Grid container spacing={2} justifyContent="center">
                                     <Grid item>
-                                        <Button variant="outlined" color="primary">
+                                        <Button variant="contained" color="primary">
                                             Sorted by donation goal
                                         </Button>
                                     </Grid>
