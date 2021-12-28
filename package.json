@@ -2,7 +2,7 @@
     "name": "test-kitabisa",
     "description": "Server rendering with React.",
     "scripts": {
-        "build": "webpack",
+        "build": "webpack --watch",
         "start": "node dist/server.js",
         "debug": "node src/server/debug.js",
         "dev": "webpack && node dist/server.js"
