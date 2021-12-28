@@ -123,6 +123,7 @@ export default function App(props) {
                         <Grid container spacing={4}>
                             {props.context.data.map((campaign) => {
                                 const percentage = ((campaign.donation_percentage * 100).toFixed() > 100) ? 100 : (campaign.donation_percentage * 100).toFixed(2)
+                                const round_prercent = Math.round(percentage)
                                 return (
                                     <Grid item key={campaign.id} xs={12} sm={6} md={4}>
                                         <Card className={classes.card}>
@@ -142,11 +143,11 @@ export default function App(props) {
                                                     <p>{formatter.format(campaign.donation_received)} <span style={{ float: "inline-end" }}>{campaign.days_remaining}</span></p>
                                                     <p>{percentage}%</p>
                                                 </Typography>
-                                                {percentage < 100 ? <BorderLinearProgressGrey variant="determinate" value={percentage} /> : <BorderLinearProgressPink variant="determinate" value={percentage} />}
+                                                {percentage < 100 ? <BorderLinearProgressGrey variant="determinate" value={round_prercent} /> : <BorderLinearProgressPink variant="determinate" value={round_prercent} />}
                                             </CardContent>
                                             <CardActions>
-                                                <Button size="small" color="primary">
-                                                    View
+                                                <Button href={`/${campaign.short_url}`} size="small" color="primary">
+                                                    Lihat
                                                 </Button>
                                             </CardActions>
                                         </Card>

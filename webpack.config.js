@@ -14,14 +14,6 @@ const browserConfig = {
         rules: [
             { test: /\.(js)$/, use: 'babel-loader' },
             { test: /\.css$/, use: ['css-loader'] },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
-            },
         ]
     },
     plugins: [
@@ -46,14 +38,6 @@ const serverConfig = {
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
-            },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
             },
         ]
     },

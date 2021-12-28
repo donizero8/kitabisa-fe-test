@@ -1,9 +1,10 @@
 {
     "name": "test-kitabisa",
-    "description": "Server rendering with React Router.",
+    "description": "Server rendering with React.",
     "scripts": {
         "build": "webpack",
         "start": "node dist/server.js",
+        "debug": "node src/server/debug.js",
         "dev": "webpack && node dist/server.js"
     },
     "babel": {
@@ -20,12 +21,12 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
         "@babel/preset-env": "^7.14.7",
         "@babel/preset-react": "^7.14.5",
+        "@babel/register": "^7.16.5",
         "@material-ui/core": "^4.12.3",
         "@material-ui/icons": "^4.11.2",
         "babel-loader": "^8.2.2",
         "css-loader": "^5.2.6",
         "express-http-proxy": "^1.6.3",
-        "file-loader": "^6.2.0",
         "mini-css-extract-plugin": "^2.0.0",
         "webpack": "^5.42.0",
         "webpack-cli": "^4.7.2",
