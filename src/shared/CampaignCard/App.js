@@ -14,6 +14,9 @@ export default function Campaign(props) {
         style: 'currency',
         currency: 'IDR',
     });
+    const truncate = (str) => {
+        return str.length > 43 ? str.substring(0, 43) + "..." : str;
+    }
     const percentage = ((props.campaign.donation_percentage * 100).toFixed() > 100) ? 100 : (props.campaign.donation_percentage * 100).toFixed(2)
     const round_prercent = Math.round(percentage)
     return (
@@ -26,8 +29,8 @@ export default function Campaign(props) {
                 title={props.campaign.titile}
             />
             <CardContent className={classes.cardContent}>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {props.campaign.titile}
+                <Typography gutterBottom variant="h6" component="h1">
+                    {truncate(props.campaign.title)}
                 </Typography>
                 <Typography>
                     <p>Terkumpul : <span style={{ float: "inline-end" }}>Sisa hari:</span></p>

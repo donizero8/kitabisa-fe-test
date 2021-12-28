@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,6 +9,7 @@ import Container from '@material-ui/core/Container';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import Campaign from './CampaignCard/App';
 import useStyles from './styles';
+import { orderBy } from "lodash";
 
 const theme = createTheme({
     palette: {
@@ -20,6 +21,24 @@ const theme = createTheme({
 });
 
 export default function App(props) {
+    const [campaignList, setCampaignList] = useState([]);
+    const [sortBy, setSortBy] = useState("");
+
+    useEffect(() => {
+        setCampaignList(props.context.data)
+    }, [])
+
+    useEffect(() => {
+        if (sortBy !== "") {
+            const sortedData = orderBy(campaignList, sortBy, "desc");
+            setCampaignList(sortedData);
+        }
+    }, [sortBy])
+
+    const handleClickSortBy = (e) => {
+        setSortBy(e.currentTarget.value)
+    }
+
     const classes = useStyles();
     return (
         <React.Fragment>
@@ -39,12 +58,12 @@ export default function App(props) {
                             <div className={classes.heroButtons}>
                                 <Grid container spacing={2} justifyContent="center">
                                     <Grid item>
-                                        <Button variant="contained" color="primary">
+                                        <Button variant={(sortBy === "donation_target") ? "contained" : "outlined"} value={"donation_target"} onClick={(e) => handleClickSortBy(e)} color="primary">
                                             Sorted by donation goal
                                         </Button>
                                     </Grid>
                                     <Grid item>
-                                        <Button variant="outlined" color="primary">
+                                        <Button variant={(sortBy === "donation_received") ? "contained" : "outlined"} value={"donation_received"} onClick={(e) => handleClickSortBy(e)} color="primary">
                                             Sorted by donation days left
                                         </Button>
                                     </Grid>
@@ -54,7 +73,7 @@ export default function App(props) {
                     </div>
                     <Container className={classes.cardGrid} maxWidth="md">
                         <Grid container spacing={4}>
-                            {props.context.data.map((campaign) => {
+                            {campaignList.map((campaign) => {
                                 return (
                                     <Grid item key={campaign.id} xs={12} sm={6} md={4}>
                                         <Campaign campaign={campaign} />
